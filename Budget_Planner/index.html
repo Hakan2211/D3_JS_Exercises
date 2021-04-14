@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="expense-tracker">
+        <header>
+            <h2 class="title">Expense Tracker - D3 Visualization</h2>
+            <p class="text">Monthly Money Tracker visualized with th D3.js Library</p>
+        </header>
+    
+        <div class="container">
+            
+            <form class="form">
+                <span class="form-title">Add Item:</span>
+                <div class="input-container">
+                    <input type="text" id="name" placeholder="Enter Item Name">
+                    <label for="name">Item Name</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="cost" placeholder="Enter Item Cost">
+                    <label for="cost">Item Cost</label>
+                </div>
+                <div class="input-container">
+                    <button type="submit" class="add-btn">Add Item</button>
+                </div>
+                <div class="input-container">
+                <p class="error-message" id="error"></p>
+                </div>
+            </form>
+              
+            <div class="canvas"></div>
+
+        </div>
+    </section>
+
+ 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAz-PzkJmbrueRNEXQktS-e3F56aU73bvw",
+    authDomain: "d3visualization-bc081.firebaseapp.com",
+    databaseURL: "https://d3visualization-bc081-default-rtdb.firebaseio.com",
+    projectId: "d3visualization-bc081",
+    storageBucket: "d3visualization-bc081.appspot.com",
+    messagingSenderId: "96634931517",
+    appId: "1:96634931517:web:72fd908904450ec1231d54",
+    measurementId: "G-X8NYJ1YL0J"
+  };
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+  
+  
+const db = firebase.firestore()
+const settings = {timestampsInSnapshots:true}
+db.settings(settings)
+</script>
+      
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+<script src="script.js"></script>
+<script src="graph.js"></script>
+
+</body>
+</html>
